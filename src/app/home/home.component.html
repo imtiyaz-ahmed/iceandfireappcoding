@@ -1,0 +1,90 @@
+<div class="container-fluid" style="text-align: center;">
+
+  <div class="row" style="text-align: center;">
+    <div class="col-md-12" style="font-size: 1.5rem;">
+      Books, Characters and Houses from Ice and Fire API
+    </div>
+    <br><br>
+  </div> <!-- end class row -->
+
+  <div class="row">      
+
+    <div *ngFor="let book of allBooks" class="col-md-3">
+
+      <a class="btn" [routerLink]="['/detail', book.url]">
+        <div class="card mb-2 bookStyle" style="width: 18rem;">
+
+          <div class="card-header">
+            <h5 class="card-title">{{ book.name }}</h5>
+          </div>
+
+          <div class="card-body">
+            <h6 class="card-subtitle text-muted mb-2">Written by {{ book.authors }}</h6>
+            <p class="card-text">ISBN: {{ book.isbn }}</p>
+            <div>
+              Released on {{ book.released | date }}
+              <br>by {{ book.publisher }}
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <span class="badge badge-pill badge-info">Books</span>
+          </div>
+
+        </div>
+      </a>
+
+    </div> <!-- end books ngFor loop div -->
+
+
+    <div *ngFor="let character of allCharacters" class="col-md-3">
+
+      <a class="btn" [routerLink]="['/detail', character.url]">
+        <div class="card mb-2 characterStyle" style="width: 18rem;">
+
+          <div class="card-header">
+            <h5 class="card-title">{{ character.aliases }}</h5>
+          </div>
+
+          <div class="card-body">
+            <h6 class="card-subtitle text-muted mb-2">Actual name: {{ character.name }}</h6>
+            <p class="card-text">Gender: {{ character.gender }}</p>
+          </div>
+
+          <div class="card-footer">
+            <span class="badge badge-pill badge-info">Characters</span>
+          </div>
+
+        </div>
+      </a>
+
+    </div> <!-- end characters ngFor loop div -->
+
+
+    <div *ngFor="let house of allHouses" class="col-md-3">
+
+      <a class="btn" [routerLink]="['/detail', house.url]">
+        <div class="card mb-2 houseStyle" style="width: 18rem;">
+
+          <div class="card-header">
+            <h5 class="card-title">{{ house.name }}</h5>
+          </div>
+
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2">Region: {{ house.region }}</h6>
+            <p class="card-text wrap">Seats: {{ house.seats }}</p>
+          </div>
+
+          <div class="card-footer">
+            <span class="badge badge-pill badge-info">Houses</span>
+          </div>
+
+        </div>
+      </a>
+
+    </div> <!-- end houses ngFor loop div -->
+
+
+  </div> <!-- end class row -->
+
+</div> <!-- end class container-fluid -->

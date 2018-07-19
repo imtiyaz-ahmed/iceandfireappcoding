@@ -1,0 +1,63 @@
+<div class="container-fluid">
+
+  <div class="row" *ngIf="currentBook">
+    <div class="col-md-12">
+      <h5>Book title: {{ currentBook.name }}</h5>
+      <h6>Written by: {{ currentBook.authors }}</h6>
+      <p>ISBN: {{ currentBook.isbn }}</p>
+      <p>Number of pages: {{ currentBook.numberOfPages }}</p>
+      <div>
+        Released on {{ currentBook.released | date }}
+        <br>by {{ currentBook.publisher }} in {{ currentBook.country }}
+      </div>
+      <p>Type of product release: {{ currentBook.mediaType }}</p>
+      <p>List of characters in this book:</p>
+      <span>{{ currentBook.characters }}</span>
+      <hr>
+    </div>
+  </div> <!-- end of ngIf currentBook -->
+
+
+  <div class="row" *ngIf="currentCharacter">
+    <div class="col-md-12">
+      <h5>Character aliases: {{ currentCharacter.aliases }}</h5>
+      <h6>Actual character name: {{ currentCharacter.name }}</h6>
+      <p>Gender: {{ currentCharacter.gender }}</p>
+      <p>Culture: {{ currentCharacter.culture }}</p>
+      <p>Born on: {{ currentCharacter.born | date }}</p>
+      <p>Died on: {{ currentCharacter.died | date }}</p>
+      <p>Other titles: {{ currentCharacter.titles }}</p>
+      <p>Father: {{ currentCharacter.father }}</p>
+      <p>Mother: {{ currentCharacter.mother }}</p>
+      <p>Spouse: {{ currentCharacter.spouse }}</p>
+      <p>Allegiances: {{ currentCharacter.allegiances }}</p>
+      <hr>
+    </div>
+  </div> <!-- end of ngIf currentCharacter -->
+
+
+  <div class="row" *ngIf="currentHouse">
+    <div class="col-md-12">
+      <h5>House name: {{ currentHouse.name }}</h5>
+      <h6>Region: {{ currentHouse.region }}</h6>
+      <p>Coat of arms: {{ currentHouse.coatOfArms }}</p>
+      <p>Words: {{ currentHouse.words }}</p>
+      <p>Titles: {{ currentHouse.titles }}</p>
+      <p>Seats: {{ currentHouse.seats }}</p>
+      <p>Current Lord: {{ currentHouse.currentLord }}</p>
+      <p>Heir: {{ currentHouse.heir }}</p>
+      <p>Overlord: {{ currentHouse.overlord }}</p>
+      <p>Founded: {{ currentHouse.founded }}</p>
+      <p>Founder: {{ currentHouse.founder }}</p>
+      <p>Died out: {{ currentHouse.diedOut }}</p>
+      <p>Ancestral weapons: {{ currentHouse.ancestralWeapons }}</p>
+      <hr>
+    </div>
+  </div> <!-- end of ngIf currentHouse -->
+
+
+  <div class="row">
+    <a class="btn btn-warning" style="margin:5%" (click)="goBack()">Get Back</a>
+  </div>
+
+</div>
